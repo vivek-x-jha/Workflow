@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Boxy Theme",
+		"BracketHighlighter",
+		"Colorsublime",
+		"JSHint",
+		"Material Theme",
+		"Package Control",
+		"PackageResourceViewer",
+		"Predawn",
+		"Predawn Monokai",
+		"Python 3",
+		"SideBarEnhancements",
+		"SortTabs"
+	]
+}
