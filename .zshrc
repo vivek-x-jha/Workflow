@@ -1,6 +1,6 @@
 . `brew --prefix`/etc/profile.d/z.sh
 
-export PATH=$HOME/bin:$HOME/anaconda3/bin:$HOME/anaconda2/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/anaconda3/bin:$HOME/anaconda2/bin:$PATH
 
 export ZSH=/Users/vivekjha/.oh-my-zsh
 
