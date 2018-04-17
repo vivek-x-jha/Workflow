@@ -5,7 +5,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Colorsublime - Themes/Boron.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/Smyck.tmTheme",
 	"copy_with_empty_selection": false,
 	"drag_text": false,
 	"draw_minimap_border": true,
@@ -33,7 +33,7 @@
 		"*.psd",
 		"*.sublime-workspace"
 	],
-	"font_face": "Source Code Pro",
+	"font_face": "Source Code Pro Light",
 	"font_options":
 	[
 		"no_round"
@@ -50,7 +50,7 @@
 	"match_brackets_content": false,
 	"match_selection": false,
 	"match_tags": false,
-	"material_theme_accent_sky": true,
+	"material_theme_accent_lime": true,
 	"material_theme_bullet_tree_indicator": true,
 	"material_theme_compact_panel": true,
 	"material_theme_compact_sidebar": true,

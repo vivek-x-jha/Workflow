@@ -9,7 +9,10 @@
 		"Boxy Theme",
 		"BracketHighlighter",
 		"Colorsublime",
+		"GitGutter",
+		"GitHub Flavored Markdown Preview",
 		"JSHint",
+		"MarkdownLivePreview",
 		"Material Theme",
 		"Package Control",
 		"PackageResourceViewer",
@@ -17,6 +20,7 @@
 		"Predawn Monokai",
 		"Python 3",
 		"SideBarEnhancements",
-		"SortTabs"
+		"SortTabs",
+		"SublimeGit"
 	]
 }
