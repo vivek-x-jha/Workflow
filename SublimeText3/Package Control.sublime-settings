@@ -5,22 +5,19 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Anaconda",
-		"Boxy Theme",
 		"BracketHighlighter",
 		"Colorsublime",
 		"GitGutter",
-		"GitHub Flavored Markdown Preview",
-		"JSHint",
 		"MarkdownLivePreview",
 		"Material Theme",
 		"Package Control",
 		"PackageResourceViewer",
-		"Predawn",
-		"Predawn Monokai",
 		"Python 3",
 		"SideBarEnhancements",
 		"SortTabs",
+		"SublimeCodeIntel",
 		"SublimeGit"
 	]
 }
