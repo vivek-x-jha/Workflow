@@ -12,6 +12,7 @@ Plugin 'nightsense/seabird'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
