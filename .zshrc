@@ -1,25 +1,17 @@
-. `brew --prefix`/etc/profile.d/z.sh
+. $(brew --prefix)/etc/profile.d/z.sh
 
 export PATH=$HOME/bin:$HOME/anaconda3/bin:$HOME/anaconda2/bin:$PATH
-
 export ZSH=/Users/vivekjha/.oh-my-zsh
-
 export EDITOR=vim
+. ~/.fonts/*.sh
 
-source ~/.fonts/*.sh
-
-export TERM=screen-256color
-
-echo -e "\033]6;1;bg;red;brightness;45\a"
-echo -e "\033]6;1;bg;green;brightness;47\a"
-echo -e "\033]6;1;bg;blue;brightness;48\a"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export HADOOP_HOME=/opt/hadoop-2.8.0
+. /opt/spark/conf/spark-env.sh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME='powerlevel9k/powerlevel9k'
 
 # POWERLEVEL9K_IP_INTERFACE='en0'
 # POWERLEVEL9K_PUBLIC_IP_HOST='http://ident.me'
@@ -30,17 +22,19 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 ## Powerlevel9k Settings
 POWERLEVEL9K_HISTORY_BACKGROUND='green'
 
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY='truncate_to_last'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%F{red} \Uf1d0 %f %F{yellow
-}❯ "
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='%F{red} \Uf1d0 %f %F{yellow
+}❯ '
+POWERLEVEL9K_DIR_BOLD=true
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
+POWERLEVEL9K_SHORTEN_DELIMITER=''
 
 # # Refresh Function - https://babushk.in/posts/renew-environment-tmux.html
 # if [ -n "$TMUX" ]; then
@@ -83,7 +77,23 @@ export UPDATE_ZSH_DAYS=7
 
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(sudo git osx history taskwarrior tmux tmuxinator common-aliases extract colored-man-pages colorize copydir my-aliases marked2 zsh-autosuggestions)
+plugins=(
+	sudo
+	git
+	osx
+	history
+	taskwarrior
+	tmux
+	tmuxinator
+	common-aliases
+   	extract
+	colored-man-pages
+	colorize
+	copydir
+	my-aliases
+	marked2
+	zsh-autosuggestions
+)
 
 
 # User configuration
@@ -106,13 +116,6 @@ plugins=(sudo git osx history taskwarrior tmux tmuxinator common-aliases extract
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-source $ZSH/oh-my-zsh.sh
-source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. $ZSH/oh-my-zsh.sh
+. $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Powerline
-# if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-#    PATH="$HOME/Library/Python/2.7/bin:$PATH"
-# fi
-
-# repository_root="$HOME/Library/Python/2.7/lib/python/site-packages"
-# . $repository_root/powerline/bindings/zsh/powerline.zsh

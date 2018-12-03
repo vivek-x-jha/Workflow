@@ -13,6 +13,7 @@ Plugin 'tomasiser/vim-code-dark'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'chriskempson/base16-vim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -43,13 +44,19 @@ set laststatus=2
 " Set line number
 set number
 
+" Set tab
+set tabstop=4 
+
+" Configure Vim
+"set encoding=UTF-8
+
 " Nerdtree Settings
 set mouse=a
 autocmd VimEnter * NERDTree | wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '📁'
+let g:NERDTreeDirArrowCollapsible = '📂'
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
