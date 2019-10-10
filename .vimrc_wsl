@@ -1,0 +1,94 @@
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Vivek Jha's .vimrc
+"
+" OS: Ubuntu on Windows Subsystem for Linux (WSL)
+" Base file developed from Jessica Deen's repo:
+" https://github.com/jldeen/bad-ass-terminal/blob/master/.vimrc
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" break away from old vi behavior
+set nocompatible
+" turns filetype setting off since Vim makes cache for filetype plugins from runtimepath
+" so if vundle changes runtimepath, it must reset before calling
+filetype off
+" Add Vundle path to runtimepath
+set rtp+=~/.vim/bundle/Vundle.vim
+"------------------------------------------------
+" Vundle Plugin Manager
+"------------------------------------------------
+" To activate any newly added Plugins below:
+" 1. :w              -- saves .vimrc
+" 2. :so ~/.vimrc    -- sources .vimrc
+" 3. :PluginInstall  -- installs new plugins
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'dracula/vim'
+Plugin 'nightsense/seabird'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'ryanoasis/vim-devicons'
+call vundle#end()
+
+filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"------------------------------------------------
+execute pathogen#infect()
+"------------------------------------------------
+" Load theme from ~/.vim/colors
+syntax on
+colorscheme smyck
+"------------------------------------------------
+" Airline
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+"------------------------------------------------
+" Always show statusline
+set laststatus=2
+"------------------------------------------------
+" Turn hybrid line numbers on
+set number relativenumber
+" Set tabstop to 4 spaces and set shiftwidth (amount to indent) as 4 spaces to match tabstop
+set tabstop=4 shiftwidth=4
+"------------------------------------------------
+" Nerdtree Settings
+"------------------------------------------------
+" Set scroll on - note this eliminates basic copy-paste in Ubuntu WSL shell
+set mouse=a
+" Change directory color to value set by ctermfg
+highlight Directory ctermfg=magenta
+" tell Nerdtree to startup with Vim every time
+autocmd VimEnter * NERDTree | wincmd p
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" click ctrl+n to toggle NerdTree
+map <C-n> :NERDTreeToggle<CR>
+" Set custom folder icons
+let g:NERDTreeDirArrowExpandable = '$'
+let g:NERDTreeDirArrowCollapsible = '*'
+" automatically close NerdTree when you open a file
+let NERDTreeQuitOnOpen = 1
+" automatially close a tab if the only remaining window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" automatically delete the buffer of the file you just deleted with NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+" set these for better aesthetics
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+" speed up vertical scrolling
+set ttyfast
+" buffer screen updates instead of updating all the time
+set lazyredraw
+" double click t button to toggle NerdTree
+map tt :NERDTreeToggle<CR>
+" click [] to toggle Tagbar
+map [] :TagbarToggle<CR>
+"------------------------------------------------
+
